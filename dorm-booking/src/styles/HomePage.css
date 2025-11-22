@@ -1,0 +1,126 @@
+.home-wrapper {
+  min-height: calc(100vh - 56px);
+  background: linear-gradient(
+    var(--bg-light-blue) 97%,
+    var(--bottom-blue) 100%
+  );
+}
+
+.home-hero-bg {
+  padding-bottom: 48px;
+}
+
+.home-hero {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.home-hero-text {
+  max-width: 520px;
+  text-align: center;
+}
+
+.home-hero-text h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.home-hero-subtitle {
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #f7941d;
+}
+
+.home-hero-desc {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.home-hero-btn {
+  margin-top: 18px;
+}
+
+/* การ์ดสรุปห้อง */
+.home-summary {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* ข้อมูลเพิ่มเติม 3 สี */
+.home-extra {
+  margin-top: 28px;
+}
+
+.home-extra-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.home-extra-box {
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #f6f6f6;
+  font-size: 13px;
+}
+
+.home-extra-blue {
+  background: #e6f0ff;
+}
+
+.home-extra-yellow {
+  background: #fff4d4;
+}
+
+.home-extra-pink {
+  background: #ffe6f0;
+}
+
+.home-extra-amount {
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+/* columns */
+.home-two-columns {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* ที่อยู่ */
+.home-location {
+  margin-top: 22px;
+}
+
+.home-location-small {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* bar ติดต่อสอบถาม */
+.home-contact {
+  margin-top: 30px;
+}
+
+.home-contact-bar {
+  background: linear-gradient(90deg, #fbb03b, #ffdd7f);
+  border-radius: 16px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+}
