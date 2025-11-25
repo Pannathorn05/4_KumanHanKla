@@ -1,0 +1,13 @@
+.admin-members-page {
+  background: #141414;
+  min-height: 100vh;
+  padding: 40px 60px;
+}
+
+.members-page-title {
+  margin: 0 0 24px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+}
