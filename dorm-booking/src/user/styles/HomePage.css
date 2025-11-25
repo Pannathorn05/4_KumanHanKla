@@ -1,15 +1,16 @@
+/* พื้นหลัง */
 .home-wrapper {
-  min-height: calc(100vh - 56px);
-  background: linear-gradient(
-    var(--bg-light-blue) 97%,
-    var(--bottom-blue) 100%
-  );
+  background: linear-gradient(#A4D3FF 0%, #ffffff 10%);
+  min-height: 100vh;
+  padding-bottom: 60px;
+  
 }
 
 .home-hero-bg {
   padding-bottom: 48px;
 }
 
+/* HERO TITLE */
 .home-hero {
   margin-top: 32px;
   display: flex;
@@ -22,9 +23,15 @@
 }
 
 .home-hero-text h1 {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.home-hero-text h2 {
+  margin-top: 40px;
   font-size: 32px;
   font-weight: 700;
-  color: var(--text-main);
+  color: #000000;
 }
 
 .home-hero-subtitle {
@@ -37,90 +44,239 @@
 .home-hero-desc {
   margin-top: 10px;
   font-size: 14px;
-  color: var(--text-muted);
+  color: #666;
 }
 
 .home-hero-btn {
   margin-top: 18px;
 }
 
-/* การ์ดสรุปห้อง */
-.home-summary {
-  margin-top: 28px;
+/* CARD สรุป */
+.detail-grid {
+  margin-top: 35px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
   justify-content: center;
+  gap: 24px;
 }
 
-/* ข้อมูลเพิ่มเติม 3 สี */
-.home-extra {
-  margin-top: 28px;
+.mt-20 {
+  margin-top: 20px;
 }
 
-.home-extra-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+.detail-card {
+  width: 260px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 26px 10px;
+  text-align: center;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
 }
 
-.home-extra-box {
-  padding: 14px 16px;
-  border-radius: 14px;
-  background: #f6f6f6;
-  font-size: 13px;
+.detail-card h3 {
+  font-size: 26px;
+  margin-bottom: 6px;
 }
 
-.home-extra-blue {
-  background: #e6f0ff;
+.detail-card p {
+  color: #f7a12f;
+  font-size: 16px;
 }
 
-.home-extra-yellow {
-  background: #fff4d4;
+/* SECTION CARD ขาว */
+.section-card {
+  background: #fff;
+  padding: 32px;
+  margin-top: 24px;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
-.home-extra-pink {
-  background: #ffe6f0;
+.section-desc {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 20px;
 }
 
-.home-extra-amount {
-  margin-top: 4px;
-  font-weight: 600;
-}
-
-/* columns */
-.home-two-columns {
-  margin-top: 22px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+/* A/B BOX */
+.ab-grid {
+  display: flex;
   gap: 16px;
 }
 
-/* ที่อยู่ */
-.home-location {
-  margin-top: 22px;
+.ab-box {
+  flex: 1;
+  border-radius: 14px;
+  padding: 22px;
 }
 
-.home-location-small {
-  margin-top: 6px;
-  font-size: 13px;
-  color: var(--text-muted);
+.ab-box.pink {
+  background: #ffe2e9;
 }
 
-/* bar ติดต่อสอบถาม */
+.ab-box.mint {
+  background: #e6ffea;
+}
+
+.ab-box h3 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* EXTRA INFO — กล่องใหญ่ 2 ใบ */
+.info-card-section {
+  margin-top: 32px;
+}
+
+.info-card-container {
+  background: #fff;
+  padding: 32px;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.info-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color : #606060;
+}
+
+.info-inner-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+}
+
+.info-inner-box {
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.light-blue {
+  background: #e4f1ff;
+}
+
+.light-yellow {
+  background: #ffeac7;
+}
+
+.info-inner-box h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.info-inner-box ul {
+  padding-left: 18px;
+  font-size: 15px;
+}
+
+/* AMENITY 3 BOX */
+.amenity-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 30px;
+}
+
+.amenity-card {
+  margin-top: 50px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.amenity-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #2e67ff;
+  margin-bottom: 16px;
+}
+
+.amenity-list {
+  list-style: none;
+  padding: 0;
+}
+
+.amenity-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0;
+  font-size: 16px;
+}
+
+.amenity-list li i {
+  font-size: 22px;
+}
+
+/* LOCATION */
+.location-section {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.location-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 40px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: auto;
+  text-align: left;
+}
+
+.loc-header {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.loc-address {
+  color: #f39c10;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.distance-box {
+  background: #d9eaff;
+  padding: 24px;
+  border-radius: 12px;
+  margin-top: 26px;
+}
+
+.distance-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.distance-item {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.distance {
+  color: #f7a536;
+  font-weight: 700;
+}
+
+/* CONTACT BAR */
 .home-contact {
   margin-top: 30px;
 }
 
 .home-contact-bar {
-  background: linear-gradient(90deg, #fbb03b, #ffdd7f);
+  background: linear-gradient(90deg, #ffb85f, #7ac9ff);
   border-radius: 16px;
-  padding: 16px 24px;
+  padding: 50px 20px;
   display: flex;
-  align-items: center;
   justify-content: center;
   gap: 16px;
-  color: #000000;
-  font-size: 16px;
+  font-size: 30px;
   font-weight: 600;
 }

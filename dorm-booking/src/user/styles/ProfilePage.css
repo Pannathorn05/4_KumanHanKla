@@ -1,218 +1,93 @@
 .profile-wrapper {
-  min-height: calc(100vh - 56px);
-  background: linear-gradient(
-    var(--bg-light-blue) 97%,
-    var(--bottom-blue) 100%
-  );
-  display: flex;
-  justify-content: center;
+  background: #e8f3ff;
+  min-height: 100vh;
+  padding: 40px 16px;
 }
 
-.profile-container {
-  max-width: 720px;
-  width: 100%;
-  padding: 32px 24px 48px;
-}
-
-/* การ์ดโปรไฟล์ด้านบน */
-
-.profile-card-wrapper {
-  position: relative;
-  margin-bottom: 40px;
-}
-
-.profile-card-shadow {
-  position: absolute;
-  top: 16px;
-  right: 0;
-  width: 100%;
-  max-width: 540px;
-  height: 100%;
-  border-radius: 24px;
-  background: var(--primary);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
-}
-
+/* การ์ดโปรไฟล์ */
 .profile-card {
-  position: relative;
-  z-index: 1;
-  background: #ffffff;
-  border-radius: 24px;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
-  padding: 24px 32px;
-  max-width: 540px;
+  background: #fff;
+  padding: 32px;
+  border-radius: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  border-left: 12px solid #ffa83b;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
 }
 
 .profile-name {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   margin-bottom: 8px;
 }
 
-.profile-text {
-  font-size: 16px;
-  margin-bottom: 4px;
-}
-
-/* ประวัติการจอง */
-
-.profile-history {
-  margin-top: 8px;
-}
-
-.profile-history-title {
+.profile-phone,
+.profile-email {
   font-size: 18px;
+  color: #444;
+}
+
+/* หัวข้อประวัติ */
+.history-section {
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.history-title {
+  font-size: 26px;
   font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.profile-history-card {
-  background: #ffffff;
-  border-radius: 18px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-  padding: 18px 24px;
-  font-size: 14px;
-  color: #333;
-}
-
-/* เวลามีการจองแล้ว */
-
-.profile-history-card--has {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.profile-history-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.profile-history-date {
-  font-size: 14px;
-}
-
-.profile-history-status {
-  font-size: 13px;
-  padding: 4px 14px;
-  border-radius: 999px;
-  background: #e5f8e9;
-  color: #2e7d32;
-  font-weight: 600;
-}
-
-/* ตารางในประวัติการจอง */
-
-.profile-history-table {
-  background: #f2f2f2;
-  border-radius: 12px;
-  padding: 10px 16px;
-}
-
-.profile-history-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  text-align: center;
-  gap: 8px;
-}
-
-.profile-history-row--head {
-  font-weight: 600;
-  font-size: 13px;
-  margin-bottom: 6px;
-}
-
-.profile-history-row span:first-child {
-  text-align: left;
-}
-
-.profile-history-row span:last-child {
-  text-align: right;
-}
-
-/* footer link */
-
-.profile-history-footer {
-  margin-top: 4px;
-  text-align: right;
-}
-
-.profile-history-link {
-  background: none;
-  border: none;
-  color: #3664ff;
-  font-size: 14px;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-/* การ์ดประวัติการจอง */
-.booking-card {
-  padding: 20px 24px;
-}
-
-/* header */
-.booking-header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
   margin-bottom: 16px;
 }
 
-.booking-status {
-  background: #d2f5d5;
-  color: #3a923f;
-  padding: 4px 14px;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: 600;
+/* การ์ดประวัติ */
+.history-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
 }
 
-/* ตาราง 3 ช่อง */
-.booking-table {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background: #efefef;
-  border-radius: 10px;
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.history-link {
+  color: #2a6bff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* ตาราง */
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.history-table th {
+  background: #e6f0ff;
+  padding: 14px;
+  font-size: 16px;
+}
+
+.history-table td {
+  padding: 14px;
+  font-size: 17px;
   text-align: center;
-  padding: 12px 0;
-  margin-bottom: 14px;
+  border-top: 1px solid #ddd;
 }
 
-.booking-label {
-  font-size: 13px;
-  color: #555;
+/* สถานะ */
+.history-status p {
+  font-size: 16px;
+  margin: 4px 0;
 }
 
-.booking-value.big {
-  font-size: 18px;
+.status-orange {
+  color: #ff7b00;
   font-weight: 700;
-}
-
-/* ผู้เข้าพักคนที่ 2 */
-.guest-list-section {
-  margin-top: 10px;
-}
-
-.guest-title {
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.guest-info-box {
-  background: #d8e8ff;
-  border-radius: 10px;
-  padding: 12px 16px;
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-/* footer */
-.booking-footer {
-  text-align: right;
-  font-size: 13px;
-  margin-top: 10px;
 }

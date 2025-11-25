@@ -50,60 +50,47 @@ function ProfilePage() {
         <main className="profile-wrapper">
             <div className="profile-container">
                 {/* การ์ดข้อมูลผู้ใช้ */}
-                <section className="profile-card-wrapper">
-                    <div className="profile-card-shadow" />
-                    <div className="profile-card">
-                        <h2 className="profile-name">{dummyUser.fullName}</h2>
-                        <p className="profile-text">{dummyUser.phone}</p>
-                        <p className="profile-text">{dummyUser.email}</p>
-                    </div>
+                <section className="profile-card">
+                    <h2 className="profile-name">{dummyUser.fullName}</h2>
+                    <p className="profile-phone">{dummyUser.phone}</p>
+                    <p className="profile-email">{dummyUser.email}</p>
                 </section>
 
                 {/* ประวัติการจอง */}
-                <section className="profile-history">
-                    <h3 className="profile-history-title">ประวัติการจอง</h3>
+                <section className="history-section">
+                    <h2 className="history-title">ประวัติการจอง</h2>
 
-                    {!hasBooking && (
-                        <div className="profile-history-card">
-                            <p>ไม่พบการจอง</p>
+                    <div className="history-card">
+
+                        <div className="history-header">
+                            <p>จองเมื่อ: 22/11/2568</p>
+                            <a href="#" className="history-link">ขั้นตอนการทำสัญญา</a>
                         </div>
-                    )}
 
-                    {hasBooking && (
-                        <div className="profile-history-card profile-history-card--has">
-                            <div className="profile-history-header">
-                                <span className="profile-history-date">
-                                    {bookingCreatedText}
-                                </span>
-                                <span className="profile-history-status">ยืนยันแล้ว</span>
-                            </div>
+                        <table className="history-table">
+                            <thead>
+                                <tr>
+                                    <th>อาคาร</th>
+                                    <th>จำนวนผู้เข้า</th>
+                                    <th>วันที่เข้าพัก</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{latestBooking.building}</td>
+                                    <td>{latestBooking.numPeople}</td>
+                                    <td>{moveInFormatted}</td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-                            <div className="profile-history-table">
-                                <div className="profile-history-row profile-history-row--head">
-                                    <span>อาคาร</span>
-                                    <span>จำนวนผู้เข้าพัก</span>
-                                    <span>วันที่เข้าพัก</span>
-                                </div>
-                                <div className="profile-history-row">
-                                    <span>{latestBooking.building}</span>
-                                    <span>{latestBooking.numPeople}</span>
-                                    <span>{moveInFormatted}</span>
-                                </div>
-                            </div>
-
-                            <div className="profile-history-footer">
-                                <button
-                                    type="button"
-                                    className="profile-history-link"
-                                    onClick={() =>
-                                        window.scrollTo({ top: 0, behavior: "smooth" })
-                                    }
-                                >
-                                    ขั้นตอนการทำสัญญา
-                                </button>
-                            </div>
+                        <div className="history-status">
+                            <p><strong>สถานะ:</strong> <span className="status-orange">รอทำสัญญา</span></p>
+                            <p><strong>วันที่สัญญา:</strong> รอแจ้ง (ภายใน 24 ชม.)</p>
+                            <p><strong>เลขห้อง:</strong> แจ้งในวันทำสัญญา</p>
                         </div>
-                    )}
+
+                    </div>
                 </section>
             </div>
         </main>

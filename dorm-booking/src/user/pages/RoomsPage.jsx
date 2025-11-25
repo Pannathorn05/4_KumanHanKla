@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import "../styles/RoomsPage.css";
 
 const dummyUser = {
@@ -51,7 +51,7 @@ function RoomsPage() {
     setShowConfirm(true);
   };
 
-    const handleConfirmBooking = () => {
+  const handleConfirmBooking = () => {
     setShowConfirm(false);
     setBookingDone(true);
 
@@ -102,12 +102,13 @@ function RoomsPage() {
         {!bookingDone ? (
           <>
             {/* การ์ดข้อมูลห้องพัก */}
+            <h2 className="rooms-card-title">ข้อมูลห้องพัก</h2>
             <section className="rooms-section">
               <div className="rooms-card rooms-roominfo-card">
-                <h2 className="rooms-card-title">ข้อมูลห้องพัก</h2>
+
                 <div className="rooms-roomtype-box">
                   <p className="rooms-roomtype-name">ห้องพักมาตรฐาน</p>
-                  <p>ขนาด 20 ตร.ม.</p>
+                  <p >ขนาด 20 ตร.ม.</p>
                   <p className="rooms-roomtype-price">
                     45,000 บาท/ปี<br />
                     <span>ไม่รวมค่าไฟ ค่าน้ำ</span>
@@ -246,23 +247,29 @@ function RoomsPage() {
              หน้าหลังจากจองสำเร็จ
           -----------------------------------*/
           <section className="rooms-success">
+            <div className="rooms-success-icon-wrapper">
+              <div className="rooms-success-icon">✓</div>
+            </div>
             <h2 className="rooms-success-title">
               จองสำเร็จ! ขอบคุณที่เลือกใช้บริการหอพักใจ
             </h2>
 
-            <div className="rooms-success-icon-wrapper">
-              <div className="rooms-success-icon">✓</div>
+            <div className="success-box">
+              <h3 className="success-box-title">ห้องของคุณ</h3>
+              <p className="success-box-desc">
+                เจ้าหน้าที่จะกำหนดเลขห้องให้ในวันทำสัญญา
+              </p>
             </div>
 
             <div className="rooms-card rooms-next-steps-card">
-              <h3 className="rooms-card-subtitle">ขั้นตอนต่อไป: การทำสัญญา</h3>
+              <h2 className="rooms-card-subtitle">ขั้นตอนต่อไป: การทำสัญญา</h2>
               <div className="rooms-next-steps-grid">
                 <div className="rooms-next-step-box step-purple">
                   <h4>เอกสารที่ต้องเตรียม</h4>
                   <ul>
-                    <li>สำเนาบัตรประชาชนผู้พัก (จำนวน 2 ฉบับ)</li>
-                    <li>สำเนาบัตรประชาชนผู้ปกครอง (จำนวน 2 ฉบับ)</li>
-                    <li>สำเนาทะเบียนบ้านผู้พัก (จำนวน 1 ฉบับ)</li>
+                    <li><strong>สำเนาบัตรประชาชนผู้พัก </strong>(จำนวน 2 ฉบับ)</li>
+                    <li><strong>สำเนาบัตรประชาชนผู้ปกครอง </strong>(จำนวน 2 ฉบับ)</li>
+                    <li><strong>สำเนาทะเบียนบ้านผู้พัก </strong>(จำนวน 1 ฉบับ)</li>
                   </ul>
                 </div>
 
@@ -290,6 +297,7 @@ function RoomsPage() {
                     <li>กรุณานำเอกสารตัวจริงมาในวันทำสัญญาด้วยทุกครั้ง</li>
                     <li>การจองมีอายุ 7 วัน หากไม่มาทำสัญญาจะถือว่าสละสิทธิ์</li>
                     <li>หลังทำสัญญาไม่สามารถคืนเงินจองได้</li>
+                    <li><p className="text-red">หากไม่มาทำสัญญาตามกำหนด ระบบจะยกเลิกการจองโดยอัตโนมัติ</p></li>
                   </ul>
                 </div>
               </div>
@@ -310,23 +318,24 @@ function RoomsPage() {
       {showConfirm && bookingSummary && (
         <div className="rooms-modal-backdrop">
           <div className="rooms-modal">
-            <h3 className="rooms-modal-title">ยืนยันการจอง</h3>
+            <h3 className="rooms-modal-title">ตรวจสอบความถูกต้อง</h3>
             <div className="rooms-modal-body">
-              <p>อาคาร : {bookingSummary.building}</p>
-              <p>วันที่เข้าพัก : {formatDateThai(bookingSummary.moveInDate)}</p>
-              <p>จำนวน : {bookingSummary.numPeople} คน</p>
-              <p>
-                ผู้เข้าพักคนที่ 1 : {bookingSummary.guest1.fullName} | เบอร์โทร :{" "}
-                {bookingSummary.guest1.phone} | อีเมล :{" "}
-                {bookingSummary.guest1.email}
-              </p>
+              <p><strong>อาคาร : </strong>{bookingSummary.building}</p>
+              <p><strong>วันที่เข้าพัก : </strong>{formatDateThai(bookingSummary.moveInDate)}</p>
+              <p><strong>จำนวน : </strong>{bookingSummary.numPeople} คน</p>
+              <p><strong>ผู้เข้าพักคนที่ 1 :  </strong>{bookingSummary.guest1.fullName}</p>
+              <p><strong>เบอร์โทร : </strong>{bookingSummary.guest1.phone}</p>
+              <p><strong>อีเมล : </strong>{bookingSummary.guest1.email}</p>
               {bookingSummary.guest2 && (
                 <p>
-                  ผู้เข้าพักคนที่ 2 : {bookingSummary.guest2.fullName} | เบอร์โทร
-                  : {bookingSummary.guest2.phone} | อีเมล :{" "}
-                  {bookingSummary.guest2.email}
+                  <strong>ผู้เข้าพักคนที่ 2 : </strong>{bookingSummary.guest2.fullName}<br />
+                  <strong>เบอร์โทร : </strong>{bookingSummary.guest2.phone}<br />
+                  <strong>อีเมล : </strong>{bookingSummary.guest2.email}
                 </p>
               )}
+              <p className="rooms-modal-note">
+                <strong>หมายเหตุ:</strong> เลขห้องจะถูกกำหนดและแจ้งให้ทราบในวันทำสัญญา
+              </p>
             </div>
             <div className="rooms-modal-actions">
               <button
