@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // 👈 เพิ่ม import
 import "../styles/DashboardPage.css";
 
 const data = [
@@ -31,7 +32,13 @@ const data = [
 const BookingTable = () => {
   return (
     <div className="booking-table-wrapper">
-      <div className="section-title">การจองล่าสุด</div>
+      
+      {/* ------------------ ตารางการจองล่าสุด ------------------ */}
+      <div className="section-title">
+        การจองล่าสุด
+        <Link to="/admin/bookings" className="view-all-btn">ดูทั้งหมด</Link>
+      </div>
+
       <table className="booking-table">
         <thead>
           <tr>
@@ -59,17 +66,15 @@ const BookingTable = () => {
         </tbody>
       </table>
 
+      {/* ------------------ ตารางทำสัญญาวันนี้ ------------------ */}
       <div className="section-title section-title-bottom">
-        การจองล่าสุด
+        ทำสัญญาวันนี้
+        <Link to="/admin/contracts" className="view-all-btn">ดูทั้งหมด</Link>
       </div>
 
       <div className="booking-current">
         <div className="booking-current-text">
           สมชาย ใจดี • อาคาร A • 09:00 น.
-        </div>
-        <div className="booking-current-actions">
-          <button className="btn-outline">ทำสัญญา</button>
-          <button className="btn-danger">ยกเลิก</button>
         </div>
       </div>
 
@@ -77,11 +82,8 @@ const BookingTable = () => {
         <div className="booking-current-text">
           นักรัตถ์ ใจชา • อาคาร B • 11:00 น.
         </div>
-        <div className="booking-current-actions">
-          <button className="btn-outline">ทำสัญญา</button>
-          <button className="btn-danger">ยกเลิก</button>
-        </div>
       </div>
+
     </div>
   );
 };

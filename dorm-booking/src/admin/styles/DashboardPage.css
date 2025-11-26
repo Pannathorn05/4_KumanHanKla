@@ -61,6 +61,16 @@
   cursor: pointer;
 }
 
+.logout-link {
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.logout-link:hover {
+  opacity: 0.8;
+}
+
 /* MAIN AREA */
 
 .dashboard-main {
@@ -222,3 +232,18 @@
   background: #f44336;
   color: #ffffff;
 }
+
+.view-all-btn {
+  float: right;
+  font-size: 14px;
+  text-decoration: none;
+  color: #007bff;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.view-all-btn:hover {
+  text-decoration: underline;
+}
+
+

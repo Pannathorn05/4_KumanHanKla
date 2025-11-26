@@ -6,6 +6,10 @@ const LoginPage = ({ onLogin }) => {
     e.preventDefault();
     onLogin();
   };
+  const handleAdminLogin = () => {
+    localStorage.setItem("adminAuth", "true"); // 👈 เซฟว่าเป็น admin
+    window.location.href = "/admin/dashboard";  // 👈 พาเข้า dashboard
+  };
 
   return (
     <div className="login-root">
@@ -23,7 +27,7 @@ const LoginPage = ({ onLogin }) => {
             className="login-input"
           />
           <button type="submit" className="login-button">
-            login
+            เข้าสู่ระบบ
           </button>
         </form>
       </div>

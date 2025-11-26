@@ -28,14 +28,7 @@ const Sidebar = () => {
           การจอง
         </NavLink>
 
-        <NavLink
-          to="/admin/members"
-          className={({ isActive }) =>
-            "sidebar-menu-item" + (isActive ? " active" : "")
-          }
-        >
-          สมาชิก
-        </NavLink>
+
 
         <NavLink
           to="/admin/contracts"
@@ -45,9 +38,28 @@ const Sidebar = () => {
         >
           การทำสัญญา
         </NavLink>
+
+        <NavLink
+          to="/admin/members"
+          className={({ isActive }) =>
+            "sidebar-menu-item" + (isActive ? " active" : "")
+          }
+        >
+          สมาชิก
+        </NavLink>
       </nav>
 
-      <div className="sidebar-footer">ออกจากระบบ</div>
+      <div className="sidebar-footer">
+        <NavLink
+          to="/admin"
+          className="logout-link"
+          onClick={() => {
+            localStorage.removeItem("adminAuth"); // (ถ้ามีระบบ login ค้างไว้)
+          }}
+        >
+          ออกจากระบบ
+        </NavLink>
+      </div>
     </div>
   );
 };

@@ -42,9 +42,6 @@ const ContractFilters = ({
         <option value="done">เสร็จสิ้น</option>
       </select>
 
-      <button type="submit" className="contract-search-btn">
-        ค้นหา
-      </button>
     </form>
   );
 };

@@ -34,8 +34,10 @@ const MembersPage = () => {
 
   const filteredMembers = useMemo(() => {
     const keyword = searchText.toLowerCase();
+
     return members.filter(
       (m) =>
+        String(m.id).toLowerCase().includes(keyword) ||
         m.fullname.toLowerCase().includes(keyword) ||
         m.username.toLowerCase().includes(keyword) ||
         m.email.toLowerCase().includes(keyword) ||

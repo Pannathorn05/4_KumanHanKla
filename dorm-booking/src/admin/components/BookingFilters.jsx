@@ -39,8 +39,6 @@ const BookingFilters = ({
         <option value="approved">อนุมัติแล้ว</option>
         <option value="rejected">ปฏิเสธ</option>
       </select>
-
-      <button className="btn-search">ค้นหา</button>
     </div>
   );
 };
